@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     marginBottom: 20,
+    fontFamily: 'Roboto-Black',
   },
   iconContainer: {
     marginTop: 16,
