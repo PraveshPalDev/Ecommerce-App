@@ -11,7 +11,7 @@ const Drawer = createDrawerNavigator();
 
 export default function DrawerStack() {
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator screenOptions={{headerShown: false}}>
       <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="Search" component={Search} />
       <Drawer.Screen name="Wishlist" component={Wishlist} />
