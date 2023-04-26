@@ -6,13 +6,14 @@ import Search from '../screen/Home/Search';
 import Wishlist from '../screen/Home/Wishlist';
 import Notification from '../screen/Home/Notification';
 import Profile from '../screen/Home/Profile';
+import BottomStack from './BottomStack';
 
 const Drawer = createDrawerNavigator();
 
 export default function DrawerStack() {
   return (
     <Drawer.Navigator screenOptions={{headerShown: false}}>
-      <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="Home" component={BottomStack} />
       <Drawer.Screen name="Search" component={Search} />
       <Drawer.Screen name="Wishlist" component={Wishlist} />
       <Drawer.Screen name="Notification" component={Notification} />

@@ -2,23 +2,31 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import scaling from '../../responsive/normalize';
 
-export default function Header() {
+export default function Header({
+  leftIcon,
+  rightIcon,
+  title,
+  leftIconClick,
+  rightIconClick,
+}) {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.left_icon_container}>
-        <Image
-          source={require('../../assets/images/header-img/menu.png')}
-          style={styles.left_image}
-        />
+      <TouchableOpacity
+        style={styles.left_icon_container}
+        onPress={() => {
+          leftIconClick();
+        }}>
+        <Image source={leftIcon} style={styles.left_image} />
       </TouchableOpacity>
       <View style={styles.left_icon_container}>
-        <Text style={styles.heading}>Demo App</Text>
+        <Text style={styles.heading}>{title}</Text>
       </View>
-      <TouchableOpacity style={styles.left_icon_container}>
-        <Image
-          source={require('../../assets/images/header-img/ringing.png')}
-          style={styles.left_image}
-        />
+      <TouchableOpacity
+        style={styles.left_icon_container}
+        onPress={() => {
+          rightIconClick();
+        }}>
+        <Image source={rightIcon} style={styles.left_image} />
       </TouchableOpacity>
     </View>
   );
@@ -37,12 +45,13 @@ const styles = StyleSheet.create({
     marginHorizontal: scaling.normalize(5),
   },
   left_image: {
-    width: scaling.normalize(40),
-    height: scaling.normalize(40),
+    width: scaling.normalize(35),
+    height: scaling.normalize(35),
   },
   heading: {
-    fontSize: scaling.normalize(20),
-    color: '#000',
+    fontSize: scaling.normalize(25),
+    color: '#fff',
     fontFamily: 'Roboto-Bold',
+    fontStyle: 'italic',
   },
 });
